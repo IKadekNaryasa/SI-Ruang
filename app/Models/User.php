@@ -25,7 +25,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'bidang_id'
+        'bidang_id',
+        'role'
     ];
 
     /**

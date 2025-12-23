@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BidangController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\RoomsController;
+use App\Http\Controllers\Admin\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,6 +21,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('rooms', RoomsController::class);
     Route::resource('bidang', BidangController::class);
+    Route::resource('user', UserController::class);
 });
 
 require __DIR__ . '/auth.php';
