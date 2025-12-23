@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'id' => Str::uuid()->toString(),
             'name' => 'Operator Rapatin Bidang 3',
-            'email' => 'rapatin.bidang3@siruang.com',
+            'email' => 'siruang.bidang3@siruang.com',
             'password' => Hash::make('12345678'),
             'bidang_id' => $bidangId,
         ]);

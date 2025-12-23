@@ -56,4 +56,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Bidang::class);
     }
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isOperator()
+    {
+        return $this->role === 'operator';
+    }
 }
