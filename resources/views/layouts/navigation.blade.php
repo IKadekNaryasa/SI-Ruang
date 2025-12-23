@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('rooms.index')" :active="request()->routeIs('rooms.index')">
                         {{ __('Rooms') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('bidang.index')" :active="request()->routeIs('bidang.index')">
+                        {{ __('Bidang') }}
+                    </x-nav-link>
                 </div>
             </div>
 
