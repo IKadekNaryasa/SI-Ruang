@@ -16,12 +16,14 @@
                 <th scope="col" class="px-6 py-3">
                     Status
                 </th>
+                @if (auth()->user()->isAdmin())
                 <th scope="col" class="px-6 py-3">
                     Created At
                 </th>
                 <th scope="col" class="px-6 py-3 text-center">
                     Actions
                 </th>
+                @endif
             </tr>
         </thead>
         <tbody>
@@ -45,6 +47,7 @@
                         {{ ucfirst($room->status) }}
                     </span>
                 </td>
+                @if (auth()->user()->isAdmin())
                 <td class="px-6 py-4">
                     {{ $room->created_at->format('d M Y') }}
                 </td>
@@ -66,6 +69,7 @@
                         </form>
                     </div>
                 </td>
+                @endif
             </tr>
             @empty
             <tr>

@@ -17,7 +17,7 @@ class OperatorMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (!Auth::check() || Auth::user()->role !== 'operator') {
-            abort(403, 'Unauthorized');
+            abort(403);
         }
         return $next($request);
     }

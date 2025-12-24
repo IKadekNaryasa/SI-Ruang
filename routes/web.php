@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\RoomsController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Operator\RequestRoomController;
+use App\Http\Controllers\Operator\ViewRoomController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
@@ -25,6 +27,11 @@ Route::middleware(['auth', 'verified', 'operator'])->prefix('opt')->name('opt.')
     Route::get('/dashboard', function () {
         return view('operator.dashboard');
     })->name('dashboard');
+
+    Route::get('/room-request', [RequestRoomController::class, 'index'])->name('room-request');
+    Route::post('/room-check', [RequestRoomController::class, 'roomCheck'])->name('room-check');
+    Route::post('/request-store', [RequestRoomController::class, 'store'])->name('request-store');
+    Route::resource('room', ViewRoomController::class);
 });
 
 

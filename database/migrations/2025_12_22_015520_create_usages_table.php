@@ -15,8 +15,9 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignUuid('room_id')->constrained('rooms', 'id')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignUuid('bidang_id')->constrained('bidangs', 'id')->cascadeOnUpdate()->cascadeOnDelete();
-            $table->dateTime('start');
-            $table->dateTime('end');
+            $table->date('date');
+            $table->time('start');
+            $table->time('end');
             $table->timestamps();
         });
     }

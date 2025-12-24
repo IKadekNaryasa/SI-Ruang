@@ -14,10 +14,14 @@ class Usage extends Model
     protected $fillable = [
         'room_id',
         'bidang_id',
+        'date',
         'start',
         'end'
     ];
 
+    protected $casts = [
+        'date' => 'date',
+    ];
     public function bidang()
     {
         return $this->belongsTo(Bidang::class);
